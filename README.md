@@ -1,3 +1,5 @@
+This fork is just allows php 8.1 to install hashids.
+
 [![hashids](https://hashids.org/public/img/hashids.gif "Hashids")](https://hashids.org/)
 
 [![Build Status](https://badgen.net/github/checks/vinkla/hashids?label=build&icon=github)](https://github.com/vinkla/hashids/actions)
