@@ -92,7 +92,11 @@ class Hashids implements HashidsInterface
      */
     public function __construct($salt = '', $minHashLength = 0, $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890')
     {
-        $this->salt = \mb_convert_encoding($salt, 'UTF-8', \mb_detect_encoding($salt));
+        if (!empty($salt)) {
+            $this->salt = \mb_convert_encoding($salt, 'UTF-8', \mb_detect_encoding($salt));
+        }else{
+            $this->salt = '';
+        }
         $this->minHashLength = $minHashLength;
         $alphabet = \mb_convert_encoding($alphabet, 'UTF-8', \mb_detect_encoding($alphabet));
         $this->alphabet = \implode('', \array_unique($this->multiByteSplit($alphabet)));
